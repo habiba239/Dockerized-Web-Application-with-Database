@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0; 
+        }
+        body {
+            background-image: url('{{ url_for('static', filename='back.png') }}');
+            background-position: center; 
+            background-repeat: no-repeat; 
+            background-size: cover;
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+        }
+        .card {
+            background-color: rgb(208, 228, 233);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            margin: 10px; 
+        }
+    </style>
+</head>
+<body>
+
+    {% for row in data %}
+    <div class="card">
+        <h2></h2>
+        <p>Name: {{ row[1] }}</p>
+        <p>ID: {{ row[0] }}</p>
+        <p>Age: {{ row[2] }}</p>
+        <p>CGPA: {{ row[3] }}</p>
+    </div>
+    {% endfor %}
+
+
+
+</body>
+</html>
